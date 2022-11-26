@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./fonts/SF-Pro-Display-Regular.woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./fonts/SF-Pro-Display-Medium.woff');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./fonts/SF-Pro-Display-Bold.woff');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./fonts/SF-Pro-Display-Heavy.woff');
+  font-weight: 800;
+}
+
+:root {
+  --background-component-color: #ffffff;
+  --background-active-category: #EBEBEB;
+  --color-primary: #149CAA;
+  --color-acentuacion: #FF957C;
+  --color-secundary: #FF6464;
+  --text-inactive: #A3A3A3;
+  --text-color: #454459;
+  --shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'SF Pro Display';
+  color: var(--text-color);
+  font-size: 1.4rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #F6F7F8;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.4s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
