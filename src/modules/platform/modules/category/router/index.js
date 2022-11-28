@@ -16,7 +16,7 @@ export default {
         {
             path: 'editar-categoria/:id',
             name: 'update-category',
-            component: () => import('../views/UpdateProduct.vue'),
+            component: () => import('../views/UpdateCategory.vue'),
             props: (route) => { 
               const id = Number( route.params.id )
               return isNaN( id ) ? { id: 1} : { id } 

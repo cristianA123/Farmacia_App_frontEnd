@@ -1,5 +1,5 @@
 <template>
-  <h1>new category</h1>
+  <h1>Modificar categoria</h1>
 </template>
 
 <script>
