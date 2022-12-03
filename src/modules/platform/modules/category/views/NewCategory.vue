@@ -1,42 +1,24 @@
 <script setup>
     import { ref, reactive, onMounted} from 'vue';
-    import useProduct from '../composables/useProduct';
     import useCategory from '../composables/useCategory';
     
-    const { addProduct, cancelActions } = useProduct();
-    const { getCategories } = useCategory();
+    const { addCategary } = useCategory();
     const data = reactive({
-        nombre: '',
-        precio: 0,
-        descripcion: '',
-        laboratorio: '',
-        stock: 0,
-        vencimiento: '',
-        imagen: '',
-        categoria: '',
+        name: '',
     })
-    const categories = ref([]);
 
-    onMounted(async () => {
-        categories.value = await getCategories();
-        console.log(categories.value);
-    })
 </script>
     
 <template>
     <section class="section__adduser">
         <div class="categorys">
-            <span class="categorys__title">Nuevo producto</span>
+            <span class="categorys__title">Nueva Categoria</span>
         </div>
-        <form class="form" @submit.prevent="addProduct(data)">
+        <form class="form" @submit.prevent="addCategary(data)">
             <div class="form__inputs">
                 <div class="input__item">
                     <label for="name">Nombre <span>*</span></label>
-                    <input type="text" name="nombre" placeholder="Nombre del producto" v-model="data.nombre" >
-                </div>
-                <div class="input__item">
-                    <label for="precio">Precio <span>*</span></label>
-                    <input type="number" placeholder="S/." v-model="data.precio" >
+                    <input type="text" name="name" placeholder="Nombre del producto" v-model="data.name" >
                 </div>
             </div>
             <div class="form__actions">

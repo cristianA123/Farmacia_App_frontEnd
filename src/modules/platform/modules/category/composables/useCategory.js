@@ -2,31 +2,31 @@ import { useRouter } from "vue-router"
 import { ref } from 'vue';
 
 
-const useProduct = () => {
+const useCategary = () => {
     
-    // const API = 'https://backend-testing-production.up.railway.app'
     const API = 'http://localhost:4000'
 
 
     const router = useRouter()
 
-    const getProducts = async () => {
-        const response = await fetch(`${ API }/api/products`)
+    const getCategaries = async () => {
+        const response = await fetch(`${ API }/api/category/`)
         const data = await response.json()
-        return data.products
+        return data.categorias
     }
 
-    const getProductById = async ( id ) => {
-        const response = await fetch(`${API}/api/products/${id}`);
+    const getCategaryById = async ( id ) => {
+        const response = await fetch(`${API}/api/Categarys/${id}`);
         const data = await response.json();
-        return data.product;
+        return data.Categary;
     }
 
-    const addProduct = async ( data ) => {
-        await fetch(`${ API }/api/products`, {
+    const addCategary = async ( data ) => {
+        await fetch(`${ API }/api/category/`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'x-token': localStorage.getItem('idToken')
             },
             body: JSON.stringify(data)
         })
@@ -39,11 +39,12 @@ const useProduct = () => {
         })
     }
 
-    const deleteProduct = ( id ) => {
-        fetch(`${API}/api/products/${id}`, {
+    const deleteCategary = ( id ) => {
+        fetch(`${API}/api/category/${id}`, {
             method: 'DELETE',
             headers: {
-                'Content-type': 'application/json'
+                'Content-type': 'application/json',
+                'x-token': localStorage.getItem('idToken')
             }   
         })
         .then(res => {
@@ -54,18 +55,19 @@ const useProduct = () => {
         })
     }
 
-    const goToUpdateProduct = ( id ) => {
+    const goToUpdateCategary = ( id ) => {
         router.push({
-            name: 'update-product',
+            name: 'update-Categary',
             params: { id }
         })
     }
 
-    const updateProduct = ( id, data ) => {
-        fetch(`${API}/api/products/${id}`, {
+    const updateCategary = ( id, data ) => {
+        fetch(`${API}/api/category/${id}`, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'x-token': localStorage.getItem('idToken')
             },
             body: JSON.stringify(data)
         })
@@ -73,16 +75,16 @@ const useProduct = () => {
             if (res.ok) { 
                 console.log("HTTP request successful")
                 router.push({
-                    name: 'list-products'
+                    name: 'list-Categarys'
                 })
             }
         })
     }
 
-    const goToInfoProduct = (id) => {
+    const goToInfoCategary = (id) => {
         console.log(id)
         router.push({
-            name: 'info-product',
+            name: 'info-Categary',
             params: { id }
         })
     }
@@ -92,15 +94,15 @@ const useProduct = () => {
     }
 
     return {
-        addProduct,
-        // deleteProduct,
-        // goToUpdateProduct,
+        addCategary,
+        deleteCategary,
+        goToUpdateCategary,
         cancelActions,
-        // getProducts,
-        // getProductById,
-        // updateProduct,
-        // goToInfoProduct
+        getCategaries,
+        getCategaryById,
+        updateCategary,
+        goToInfoCategary
     }
 }
 
-export default useProduct
+export default useCategary

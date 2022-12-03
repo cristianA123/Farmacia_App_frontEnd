@@ -1,15 +1,19 @@
 <script setup>
     import { ref, onMounted } from 'vue'
-    // import useProduct from '../composables/useProduct'
-    // import ProductCard from '../components/ProductCard.vue'
+    import useCategory from '../composables/useCategory';
 
-    const products = ref([])
-    // const { getProducts } = useProduct();
+    import CategoryCard from '../components/CategoryCard.vue'
+
+    const categories = ref([])
+    const { getCategaries } = useCategory();
 
     onMounted( async () => {
-        // products.value = await getProducts()
+        categories.value = await getCategaries()
+       
     })
-    
+    console.log(11111111);
+        console.log(categories);
+        console.log(11111111);
 </script>
     
 <template>
@@ -18,10 +22,10 @@
                <span class="categorys__title">Tus categorias</span>
            </div>
            <section class="products">
-               <ProductCard 
-                v-for="product in products" 
-                :key="product.id" 
-                :product="product" 
+               <CategoryCard 
+                v-for="category in categories" 
+                :key="category.id" 
+                :category="category" 
                />
            </section>
        </section>
