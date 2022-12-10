@@ -1,0 +1,1 @@
+import{_ as r,r as s,o as e,f as o,w as t,e as n,g as c,T as d}from"./index.13d54dcd.js";const u={__name:"WorkerLayout",setup(p){return(i,l)=>{const a=s("router-view");return e(),o(a,{class:"view"},{default:t(({Component:_})=>[n(d,{name:"fade",mode:"out-in"},{default:t(()=>[(e(),o(c(_)))]),_:2},1024)]),_:1})}}},f=r(u,[["__scopeId","data-v-dedd3341"]]);export{f as default};

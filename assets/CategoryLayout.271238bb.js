@@ -1,0 +1,1 @@
+import{_ as s,r as n,o as e,f as o,w as t,e as r,g as c,T as u}from"./index.13d54dcd.js";const p={__name:"CategoryLayout",setup(f){return(i,d)=>{const a=n("router-view");return e(),o(a,{class:"view"},{default:t(({Component:_})=>[r(u,{name:"fade",mode:"out-in"},{default:t(()=>[(e(),o(c(_)))]),_:2},1024)]),_:1})}}},m=s(p,[["__scopeId","data-v-f38f9c23"]]);export{m as default};
