@@ -4,7 +4,7 @@
     import useCategory from '../composables/useCategory';
     
     const { addProduct, cancelActions } = useProduct();
-    const { getCategories } = useCategory();
+    const { getCategories, getEmpresas } = useCategory();
     const data = reactive({
         nombre: '',
         precio: 0,
@@ -14,11 +14,14 @@
         vencimiento: '',
         imagen: '',
         categoria: '',
+        empresa: ''
     })
     const categories = ref([]);
+    const empresas = ref([]);
 
     onMounted(async () => {
         categories.value = await getCategories();
+        empresas.value = await getEmpresas();
         console.log(categories.value);
     })
 </script>
@@ -74,6 +77,25 @@
                                 :value="category._id"
                             >
                                 {{ category.name }}
+                            </option>
+                        </select>
+                        <!-- <input type="text" name="categoria" placeholder="Categoria del producto" v-model="data.categoria" > -->
+                    </div>
+
+                    <div class="input__item">
+                        <label for="empresa-select">Empresa <span>*</span></label>
+                        <select 
+                            name="Empresas" 
+                            id="empresa-select"
+                            v-model="data.empresa"
+                        >
+                            <option value="" disabled selected>Seleccione una empresa</option>
+                            <option
+                                v-for="empresa in empresas"
+                                :key="empresa._id"
+                                :value="empresa._id"
+                            >
+                                {{ empresa.name }}
                             </option>
                         </select>
                         <!-- <input type="text" name="categoria" placeholder="Categoria del producto" v-model="data.categoria" > -->

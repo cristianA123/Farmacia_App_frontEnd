@@ -9,8 +9,16 @@ const useCategory = () => {
         return data.categorias
     }
 
+    const getEmpresas = async ( id ) => {
+        const response = await fetch(`${API}/api/empresa`);
+        const data = await response.json();
+        return data.empresa;
+    }
+
+
     return {
-        getCategories
+        getCategories,
+        getEmpresas
     }
 }
 
