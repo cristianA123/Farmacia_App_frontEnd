@@ -1,0 +1,1 @@
+import{_ as s,r as c,o as e,f as o,w as t,e as n,g as r,T as u}from"./index.bab77bf1.js";const d={__name:"ProductLayout",setup(p){return(i,f)=>{const a=c("router-view");return e(),o(a,{class:"view"},{default:t(({Component:_})=>[n(u,{name:"fade",mode:"out-in"},{default:t(()=>[(e(),o(r(_)))]),_:2},1024)]),_:1})}}},m=s(d,[["__scopeId","data-v-1560caf2"]]);export{m as default};
