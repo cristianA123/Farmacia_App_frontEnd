@@ -1,67 +1,67 @@
-import { useRouter } from "vue-router"
+import { useRouter } from "vue-router";
 import { ref } from 'vue';
 
 
 const useProduct = () => {
-    
+
     // const API = 'https://backend-testing-production.up.railway.app'
-    const API = 'http://localhost:4000'
+    const API = 'https://http-nodejs-production-3df3.up.railway.app';
 
 
-    const router = useRouter()
+    const router = useRouter();
 
     const getProducts = async () => {
-        const response = await fetch(`${ API }/api/products`)
-        const data = await response.json()
-        return data.products
-    }
+        const response = await fetch(`${API}/api/products`);
+        const data = await response.json();
+        return data.products;
+    };
 
-    const getProductById = async ( id ) => {
+    const getProductById = async (id) => {
         const response = await fetch(`${API}/api/products/${id}`);
         const data = await response.json();
         return data.product;
-    }
+    };
 
-    const addProduct = async ( data ) => {
-        await fetch(`${ API }/api/products`, {
+    const addProduct = async (data) => {
+        await fetch(`${API}/api/products`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
         })
-        .then(res => {
-            if (res.ok) { 
-                router.push({
-                    name: 'list-products'
-                })
-            }
-        })
-    }
+            .then(res => {
+                if (res.ok) {
+                    router.push({
+                        name: 'list-products'
+                    });
+                }
+            });
+    };
 
-    const deleteProduct = ( id ) => {
+    const deleteProduct = (id) => {
         fetch(`${API}/api/products/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-type': 'application/json'
-            }   
-        })
-        .then(res => {
-            if (res.ok) { 
-                console.log("HTTP request successful")
-                router.go() 
             }
         })
-    }
+            .then(res => {
+                if (res.ok) {
+                    console.log("HTTP request successful");
+                    router.go();
+                }
+            });
+    };
 
-    const goToUpdateProduct = ( id ) => {
+    const goToUpdateProduct = (id) => {
         router.push({
             name: 'update-product',
             params: { id }
-        })
-    }
+        });
+    };
 
-    const updateProduct = ( id, data ) => {
+    const updateProduct = (id, data) => {
         fetch(`${API}/api/products/${id}`, {
             method: 'PUT',
             headers: {
@@ -69,27 +69,27 @@ const useProduct = () => {
             },
             body: JSON.stringify(data)
         })
-        .then(res => {
-            if (res.ok) { 
-                console.log("HTTP request successful")
-                router.push({
-                    name: 'list-products'
-                })
-            }
-        })
-    }
+            .then(res => {
+                if (res.ok) {
+                    console.log("HTTP request successful");
+                    router.push({
+                        name: 'list-products'
+                    });
+                }
+            });
+    };
 
     const goToInfoProduct = (id) => {
-        console.log(id)
+        console.log(id);
         router.push({
             name: 'info-product',
             params: { id }
-        })
-    }
+        });
+    };
 
     const cancelActions = () => {
-        router.push({ name: 'list-products' })
-    }
+        router.push({ name: 'list-products' });
+    };
 
     return {
         addProduct,
@@ -100,7 +100,7 @@ const useProduct = () => {
         getProductById,
         updateProduct,
         goToInfoProduct
-    }
-}
+    };
+};
 
-export default useProduct
+export default useProduct;
