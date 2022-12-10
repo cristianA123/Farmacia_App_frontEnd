@@ -7,6 +7,7 @@
         email: '',
         password: ''
     });
+    console.log(data)
 
 </script>
 
