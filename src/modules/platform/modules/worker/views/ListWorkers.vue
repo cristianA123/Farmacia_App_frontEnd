@@ -48,6 +48,12 @@
                 <img src="http://auvirtual.untels.edu.pe/MIFSLOCAL2018/imagenes2018/2017230490.jpg" alt="User Image" class="details__img">
             </div>
             
+            <div class="box">
+                <div class="details__info">
+                    <span class="info__name"> Arnny Quispe</span>
+                </div>
+                <img src="http://auvirtual.untels.edu.pe/MIFSLOCAL2018/imagenes2018/2017210435.jpg" alt="User Image" class="details__img">
+            </div>
         
         
         
