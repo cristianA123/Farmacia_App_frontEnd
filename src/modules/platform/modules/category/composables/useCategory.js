@@ -90,9 +90,8 @@ const useCategary = () => {
     };
 
     const cancelActions = () => {
-        console.log("se cancelo")
-        router.push({ name: 'list-categories' });
-    };
+        router.push({ name: 'list-categories' })
+    }
 
     return {
         addCategary,
