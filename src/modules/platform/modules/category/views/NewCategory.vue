@@ -2,7 +2,7 @@
     import { ref, reactive, onMounted} from 'vue';
     import useCategory from '../composables/useCategory';
     
-    const { addCategary } = useCategory();
+    const { addCategary,cancelActions } = useCategory();
     const data = reactive({
         name: '',
     })
