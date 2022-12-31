@@ -3,7 +3,7 @@
     import { useRouter, useRoute } from 'vue-router';
     
     // const API = 'https://backend-testing-production.up.railway.app/api/products';
-    const API = 'http://localhost:4000'
+    const API = 'https://http-nodejs-production-3df3.up.railway.app'
 
     const router = useRouter()
     const route = useRoute()
@@ -11,7 +11,7 @@
     
     console.log('id: '+ route.params.id);
     const getProductById = async () => {
-        const response = await fetch(`${API}/${route.params.id}`);
+        const response = await fetch(`${API}/api/products/${route.params.id}`);
         const data = await response.json();
         product.value = data.product;
         console.log(product)

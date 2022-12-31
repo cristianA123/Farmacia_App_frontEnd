@@ -2,7 +2,7 @@
     import { ref, reactive, onMounted} from 'vue';
     import useCategory from '../composables/useCategory';
     
-    const { addCategary } = useCategory();
+    const { addCategary,cancelActions } = useCategory();
     const data = reactive({
         name: '',
     })
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="form__actions">
-                <button class="action__cancel" @click.prevent="cancelActions">
+                <button class="action__cancel" @click.prevent="cancelActions()">
                     Cancelar
                 </button>
                 <button type="submit" class="action__save">
