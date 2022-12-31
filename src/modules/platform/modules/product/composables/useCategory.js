@@ -17,15 +17,9 @@ const useCategory = () => {
 
 
     return {
-<<<<<<< HEAD
         getCategories,
         getEmpresas
     }
 }
-=======
-        getCategories
-    };
-};
->>>>>>> 1a755dec4b6158315224b4ea08f120e22b3f6a4b
 
 export default useCategory;
