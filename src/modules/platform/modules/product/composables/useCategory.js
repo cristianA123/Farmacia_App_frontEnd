@@ -15,7 +15,6 @@ const useCategory = () => {
         return data.empresa;
     }
 
-
     return {
         getCategories,
         getEmpresas
